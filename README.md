@@ -23,7 +23,7 @@ Forecasting stock market trends is inherently challenging due to its complexity 
 - **Visualization**: Visualizes historical data, model predictions, and evaluation metrics using graphs and charts.
 
 ## 🖥 Installation
-🛠 Requirements
+# 🛠 Requirements
 ▸ Python 3.5+
 ▸ Visual Studio Code (VS Code) 2017
 ▸ Modules = numpy, pandas, scikit-learn, 
