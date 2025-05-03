@@ -4,19 +4,20 @@ import matplotlib.pyplot as plt
 import yfinance as yf
 from tensorflow.keras.models import load_model
 import streamlit as st
+from sklearn.preprocessing import MinMaxScaler
 
-st.title("Stock Trend Prediction")
+st.title("Stock Price Prediction")
 
 
 start = '2000-01-01'
-end = '2023-12-31'
+end = '2024-12-31'
 
 user_input = st.text_input('Enter Stock Ticker', 'AAPL')
 df = yf.download(user_input, start, end)
 
 
 # Describing Data
-st.subheader('Data from 2000 - 2023')
+st.subheader('Data from 2000 - 2024')
 st.write(df.describe())
 
 # Visualizations
@@ -61,7 +62,6 @@ model = load_model('keras_model.h5')
 past_100_days = data_training.tail(100)
 
 final_df = pd.concat([past_100_days, data_testing], ignore_index=True)
-
 input_data = scaler.fit_transform(final_df)
 
 x_test = []
