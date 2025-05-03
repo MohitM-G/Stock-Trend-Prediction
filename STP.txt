@@ -1,0 +1,9 @@
+pandas
+numpy
+matplotlib.pyplot
+yfinance  
+tensorflow.keras.model
+streamlit
+scikitborn
+xgboost
+plotly
