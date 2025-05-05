@@ -51,7 +51,14 @@ start = st.sidebar.date_input("Start Date", datetime.date(2010, 1, 1))
 end = st.sidebar.date_input("End Date", datetime.date(2024, 12, 31))
 
 user_input = st.text_input('Enter Stock Ticker', 'AAPL')
-df = yf.download(user_input, start, end)
+try:
+    df = yf.download(user_input, start, end)
+    if df.empty:
+        st.error(f"❌ No data found for '{user_input}'. Please check the ticker symbol.")
+        st.stop()
+except Exception as e:
+    st.error(f"⚠️ Error fetching data: {e}")
+    st.stop()
 filtered_df = df.copy()
 
 # 💰 Show Latest Price
