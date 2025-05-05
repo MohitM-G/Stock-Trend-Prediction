@@ -159,6 +159,9 @@ for i in range(100, input_data.shape[0]):
     y_test.append(input_data[i, 0])
 
 x_test, y_test = np.array(x_test), np.array(y_test)
+if x_test is None or len(x_test) == 0:
+    st.error("❌ Prediction input is empty. This could be due to an invalid ticker or insufficient historical data.")
+    st.stop() 
 y_predicted = model.predict(x_test)
 
 scale_factor = 1/scaler.scale_[0]
