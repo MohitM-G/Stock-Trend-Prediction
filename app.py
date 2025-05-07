@@ -14,6 +14,7 @@ import datetime
 # -------------------------
 # 📚 Glossary Sidebar
 # -------------------------
+st.set_page_config(page_title="Stock Price Prediction App", layout="wide")
 st.sidebar.title("📘 Glossary")
 st.sidebar.markdown("""
 ### 📈 Moving Averages
